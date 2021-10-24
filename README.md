@@ -20,22 +20,28 @@
    ```bash
    git clone https://github.com/duck-tech/restaurant_list.git
    ```
-4. 在本地開啟之後，透過終端機進入資料夾，輸入：
+3.進入 restaurant_list 路徑
+
+   ```bash
+   cd restaurant_list
+   ```
+   
+4. 在本地開啟之後，透過終端機，輸入：
 
    ```bash
    npm install
    ```
 
-4. 安裝完畢後，繼續輸入：
+5. 安裝完畢後，繼續輸入：
 
    ```bash
-   npm run start
+   npm start
    ```
 
 5. 若看見此行訊息則代表順利運行，打開瀏覽器進入到以下網址
 
    ```bash
-   Listening on http://localhost:3000
+   http://localhost:3000
    ```
 
 6. 若欲暫停使用
