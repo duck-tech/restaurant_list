@@ -47,3 +47,4 @@
 - Express 4.17.1
 - Express-Handlebars 5.3.4
 - Bootstrap 4.2.1
+- Font Awesome 5.15.4
