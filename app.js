@@ -1,5 +1,5 @@
 const express = require('express')
-const movieList = require('./movies.json')
+const restaurantList = require('./restaurant.json')
     // require express-handlebars 
 const exphbs = require('express-handlebars')
 const app = express()
@@ -16,24 +16,23 @@ app.use(express.static('public'))
 
 // routes setting
 app.get('/', (req, res) => {
-        res.render('index', { movies: movieList.results })
+        res.render('index', { restaurants: restaurantList.results })
     })
     // params
-app.get('/movies/:movie_id', (req, res) => {
-    console.log('movie_id', req.params.movie_id)
-    const movie = movieList.results.find(movie => movie.id.toString() === req.params.movie_id)
-    res.render('show', { movie: movie })
+app.get('/restaurants/:restaurant_id', (req, res) => {
+    console.log('restaurant_id', req.params.restaurant_id)
+    const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
+    res.render('show', { restaurant: restaurant })
 })
 
 // params:id
 // querystring
 app.get('/search', (req, res) => {
         const keyword = req.query.keyword
-        const movies = movieList.results.filter(movie => {
-            // movie.title include req.query.keyword
-            return movie.title.toLowerCase().includes(keyword.toLowerCase())
+        const restaurants = restaurantList.results.filter(restaurant => {
+            return restaurant.name.toLowerCase().includes(keyword.toLowerCase())
         })
-        res.render('index', { movies: movies, keyword: req.query.keyword })
+        res.render('index', { restaurants: restaurants, keyword: req.query.keyword })
     })
     // start and listen on the Express server
 app.listen(port, () => {
