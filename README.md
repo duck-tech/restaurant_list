@@ -21,7 +21,6 @@
    git clone https://github.com/duck-tech/restaurant_list.git
    ```
 3.進入 restaurant_list 路徑
-
    ```bash
    cd restaurant_list
    ```
