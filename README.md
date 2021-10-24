@@ -17,7 +17,10 @@
 
 1. 請先確認有安裝 node.js 與 npm
 2. 將專案 clone 到本地
-3. 在本地開啟之後，透過終端機進入資料夾，輸入：
+```bash
+git clone https://github.com/z88243310/restaurant_list.git
+```
+4. 在本地開啟之後，透過終端機進入資料夾，輸入：
 
    ```bash
    npm install
