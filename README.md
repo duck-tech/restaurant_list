@@ -11,7 +11,10 @@
 - 查看所有餐廳
 - 瀏覽餐廳的詳細資訊
 - 連結餐廳的地址到 Google 地圖
-- 可以搜尋特定餐廳與分類
+- 搜尋特定餐廳
+- 新增餐廳
+- 編輯餐廳
+- 刪除餐廳
 
 ## 開始使用
 
@@ -56,3 +59,6 @@
 - Express-Handlebars 5.3.4
 - Bootstrap 4.2.1
 - Font Awesome 5.15.4
+- MongoDB
+- mongoose 6.0.12
+- body-parser: 
