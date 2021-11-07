@@ -9,6 +9,7 @@ const app = express()
 const port = 3000
     // 連結mongoose
 const Restaurant = require("./models/Restaurant")
+const methodOverride = require("method-override")
 
 // 取得資料庫連線狀態
 const db = mongoose.connection
@@ -31,6 +32,7 @@ app.set('view engine', 'handlebars')
 // setting static files
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
     // 瀏覽全部餐廳
 app.get("/", (req, res) => {
     Restaurant.find({})
@@ -94,7 +96,7 @@ app.get("/restaurants/:restaurantId/edit", (req, res) => {
 })
 
 // 更新餐廳
-app.post("/restaurants/:restaurantId", (req, res) => {
+app.put("/restaurants/:restaurantId", (req, res) => {
     const { restaurantId } = req.params
     Restaurant.findByIdAndUpdate(restaurantId, req.body)
         .then(() => res.redirect(`/restaurants/${restaurantId}`))
@@ -102,7 +104,7 @@ app.post("/restaurants/:restaurantId", (req, res) => {
 })
 
 // 刪除餐廳
-app.post('/restaurants/:restaurantId/delete', (req, res) => {
+app.delete('/restaurants/:restaurantId', (req, res) => {
     const id = req.params.restaurantId
     return Restaurant.findById(id)
         .then(restaurant => restaurant.remove())
