@@ -61,4 +61,5 @@
 - Font Awesome 5.15.4
 - MongoDB
 - mongoose 6.0.12
-- body-parser: 
+- body-parser: 1.19.0
+- method-override: 3.0.0
